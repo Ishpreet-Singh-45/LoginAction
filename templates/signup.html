@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <!-- bootstrap icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<style>
+    body
+    {
+        background-color: bisque;
+    }
+    .container
+    {
+        box-shadow: 7px 7px 15px black, -1px -1px 15px rgba(0, 0, 0, 0.377);
+    }
+    h6.text-center a
+    {
+        font-weight: 600;
+        text-decoration: none;
+    }
+    form button
+    {
+        float: right;
+    }
+    .check
+    {
+        color: #b6e9ca;
+    }
+    #saved
+    {
+        background-color: #91f3c7;
+        color: green;
+    }
+    .important
+    {
+        color: #f54545;
+    }
+</style>
+
+<body>
+    <!-- Error Modal -->
+    <div class="modal fade" tabindex="-1" id="errorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1>Error !</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="detailsError"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container mt-2 mb-1 p-1" style="box-shadow: none; width: 500px;">
+        <div class="row" id="savedRow">
+            <div class="d-flex justify-content-center">
+                <div id="saved"></div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row"></div>
+
+    <div class="row">
+        <!-- Page for Sign up Action -->
+        <div class="container border p-3" style="width: 500px; background-color: beige; transform: translateY(15%);">
+            <h2 class="text-center">Sign Up !</h2>
+            <div class="row">
+                <p class="important" style="font-size: 1rem;">* All Fields are required. </p>
+                <form method="POST">
+                    <!-- Name -->
+                    <label for="name"><strong>Name<span class="important"> *</span></strong></label>
+                    <input class="form-control" placeholder="Joah Matte" name="name" id="name" autocomplete="off">
+                    <!-- Email -->
+                    <label for="email" class="my-2"><strong>Email<span class="important"> *</span></strong></label>
+                    <input class="form-control" placeholder="jmatte585@xyz.abc" name="email" id="email" autocomplete="off">
+                    <!-- Contact -->
+                    <label for="contact" class="my-2"><strong>Contact<span class="important"> *</span></strong></label>
+                    <input type="text" class="form-control" placeholder="xxx-xxxx-xxx" name="contact" id="contact">
+                    <!-- Username -->
+                    <label for="username" class="my-2"><strong>Username<span class="important"> *</span></strong></label>
+                    <input class="form-control" placeholder="Joah_Matte" name="username" id="username" >
+                    <!-- Password -->
+                    <label for="password" class="my-1"><strong>Password<span class="important"> *</span></strong></label>
+                    <input type="password" class="form-control" name="password" id="password" placeholder="Password" autocomplete="current-password">
+
+                    <button type="submit" name="submit" id="submit" class="btn btn-primary m-4">Create Profile</button>
+                </form>
+                <h6 class="text-center">Already Registered ?
+                    <a href="./login.html"> Log In</a>
+                </h6>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+
+
+    <!-- Custom JS -->
+    <script src="./scripts/signup.js"></script>
+</body>
+</html>

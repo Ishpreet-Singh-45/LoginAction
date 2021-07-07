@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Action</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<style>
+    body
+    {
+        background-color: bisque;
+    }
+    .container
+    {
+        box-shadow: 7px 7px 15px black, -1px -1px 15px rgba(0, 0, 0, 0.377);
+    }
+    h6.text-center a
+    {
+        font-weight: 600;
+        text-decoration: none;
+    }
+</style>
+
+<body>
+    <!-- Error Modal -->
+    <div class="modal fade" tabindex="-1" id="errorModal">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h1 class="text-center">Error !</h1>
+                    <button class="btn-close" type="button" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="detailsError"></h4>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    
+
+    <!-- Page for Login Action -->
+    <div class="container border p-3" style="width: 500px; margin-top: 9%; background-color: beige;">
+        <a class="ms-4 me-1 bi bi-arrow-bar-left" href="/LoginAction/">Home</a>
+        <h3 class="text-center">Login User</h3> 
+        <div class="row">
+            <form class="mb-3" action="" method="POST">
+                <div class="m-4">
+                    <label for="username" class="form-label"><b>Username</b></label>
+                    <input type="text" class="form-control" name="username" id="username" style="border-radius: 25px;">
+                    <div style="color: red;" id="usernameError"></div>
+                </div>
+                <div class="m-4">
+                    <label for="password" class="form-label"><b>Password</b></label>
+                    <input type="password" class="form-control" name="password" id="password" style="border-radius: 25px;">
+                    <div style="color: red;" id="passwordError"></div>
+                </div>
+                <div class="form-check m-4">
+                    <input class="form-check-input" type="checkbox" value="1" id="rememberMe" checked>
+                    <label class="form-check-label" for="rememberMe">Remember Me always !</label>
+                </div>
+                
+                <button type="submit" id="submit" name="submit" class="btn btn-primary ms-4">Dashboard >>> </button>
+            </form>
+            <h6 class="text-center">New User ?
+                <a href="./signup.html">Sign Up</a>
+            </h6>
+        </div>
+    </div>
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+
+
+    <!-- Custom JS -->
+    <script src="./scripts/login.js"></script>
+</body>
+</html>

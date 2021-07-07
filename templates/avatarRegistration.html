@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User - Registration</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css">
+    <!-- Bootstrap Font Awesome -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- Bootstrap Icons CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css">
+</head>
+<style>
+    .container
+    {
+        width: 850px;
+    }
+    label
+    {
+        font-size: 1.5rem;
+        font-weight: bold;
+    }
+    #gender label
+    {
+        font-size: initial;
+    }
+    input
+    {
+        border-radius: 10px !important;
+    }
+</style>
+<body>
+    <section>
+        <div class="container">
+            <h1 class="display-3 text-center m-4">Register your Avatar</h1>
+            <form action= "../server/database/validate.php" class="needs-validation my-4 border p-4" enctype="multipart/form-data" method="POST">
+
+                <!-- Avatar -->
+                <div class="row m-3">
+                    <div class="input-group my-3">
+                        <div class="col-6">
+                            <label for="avatar">Choose your avatar: </label>
+                        </div>
+                        <input type="file" accept ="image/*" class="form-control" id="avatar" name="avatar" placeholder=".png .jpg .gif files only">
+                    </div>
+                </div>
+
+                <!-- Name -->
+                <div class="row m-3">
+                    <div class="input-group my-3">
+                        <div class="col-6">
+                            <label for="name">Full Name: </label>
+                        </div>
+                        <input type="text" class="form-control" id="name" name="name" placeholder="Brace Matte" required>
+                    </div>
+                </div>
+
+                <!-- Username/Nickname -->
+                <div class="row m-3">
+                    <div class="input-group my-3">
+                        <div class="col-6">
+                            <label for="nickname">Username/Nickname</label>
+                        </div>
+                        <input type="text" class="form-control" id="nickname" name="nickname" placeholder="B_Matte" required>
+                        
+                    </div>
+                </div>
+
+                <!-- Gender -->
+                <div class="row m-3">
+                    <div class="col-6">
+                        <label>Gender</label>
+                    </div>
+                    <div class="col my-2 form-check-inline" id="gender">
+                        <label for="radio_male">Male</label>
+                        <input type="radio" class="form-check-input" id="radio_male" name="gender">
+                        <label for="radio_female" class="ms-5">Female</label>
+                        <input type="radio" class="form-check-input" id="radio_female" name="gender">                        
+                        <label for="radio_other" class="ms-5">Other</label>
+                        <input type="radio" class="form-check-input" id="radio_other" name="gender">                        
+                    </div>
+                </div>
+
+                <!-- Age -->
+                <div class="row m-3">
+                    <div class="col-6">
+                        <label>Age</label>
+                    </div>
+                    <div class="col">
+                        <select class="form-select" aria-label="" id="age" name="age" required>
+                            <option>Select Your Age</option>
+                        </select>
+                        <script>
+                            (function() 
+                            {
+                                var elem = document.getElementById('age');
+                                var df = document.createDocumentFragment();
+                                for (var i = 18; i < 31; i++) {
+                                    var option = document.createElement('option');
+                                    option.value = i;
+                                    option.appendChild(document.createTextNode(i));
+                                    df.appendChild(option);
+                                }
+                                elem.appendChild(df);
+                            }());
+                        </script>
+                    </div>
+                </div>
+                <input type="submit" class="btn btn-primary m-3" id="submit" name="submit">
+            </form>
+        </div>
+    </section>
+
+
+
+
+    <!-- Jquery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <!-- Popper JS -->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" ></script>
+
+    <script src="./scripts/avatarRegistration.js"></script>
+</body>
+</html>
